@@ -5,8 +5,6 @@ services:
     platform: "linux/amd64"
     env_file:
       - .env
-    volumes:
-      - ./backend:/code
     depends_on:
       - db
     build:
@@ -14,7 +12,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8000:8000
-    command: uvicorn app.main:app --proxy-headers --host 0.0.0.0 --port 8000 --reload
   db:
     image: postgres
     env_file:
