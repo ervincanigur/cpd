@@ -5,6 +5,7 @@ from logging.config import fileConfig
 from alembic import context
 from app.database import Base
 from app.database import db_url_str
+from app.models import CodeCompare  # noqa
 from app.models import File  # noqa
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
